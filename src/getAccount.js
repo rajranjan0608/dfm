@@ -4,15 +4,14 @@ const fs = require('fs')
 const path = require('path')
 var web3 = new Web3()
 
+require('dotenv').config();
 
-const filePath = path.join(__dirname, './.secret')
+const filePath = path.join(__dirname, './.env')
 
 function getAccount() {
     return new Promise(resolve => {
         if(fs.existsSync(filePath)){
-            fs.readFile(filePath, {encoding: 'utf-8'}, (err, data) => {
-                resolve(web3.eth.accounts.privateKeyToAccount(ethers.Wallet.fromMnemonic(data)))
-            })
+		resolve(ethers.Wallet.fromMnemonic(process.env.MNEMONIC));
         } else {
             let randomAccount = web3.eth.accounts.create()
         
