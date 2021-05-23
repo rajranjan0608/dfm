@@ -1,5 +1,5 @@
 const FileManager = artifacts.require("FileManager");
 
-module.exports = function(deployer) {
-	deployer.deploy(FileManager);
+module.exports = async function(deployer) {
+    deployer.deploy(FileManager);
 };
