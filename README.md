@@ -31,7 +31,7 @@ MNEMONIC="<your_mnemonic>"
 **5. Migrate your smart contract** - Run the following command in the `src` directory to deploy your smart contract on the `Celo` network.
 
 ```
-truffle migrate --nework alfajores --reset
+truffle migrate --network alfajores --reset
 ```
 
 **6. Start the ReactJS application** - Use the following command to start the ReactJS server (in `dfm` directory).
