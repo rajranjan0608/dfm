@@ -22,16 +22,16 @@ sudo npm install -g truffle
 
 **3. Make a CELO wallet** - Make a `Celo` wallet at [here](https://celowallet.app/) and save your `MNEMONICS` in the `.env` file as instructed below. Also, fund your wallet address [here](https://celo.org/developers/faucet).
 
-**4. Put your MNEMONIC in `.env` file** - Make a new file `.env` inside the `src` directory and put your `Celo` mnemonic like shown below.
+**4. Put your MNEMONIC in `.env` file** - Make a new file `.env` inside the `src` directory and put your `Celo` mnemonic like shown below (double quotes are neccessary).
 
 ```javascript
-MNEMONIC=<your_mnemonic>
+MNEMONIC="<your_mnemonic>"
 ```
 
 **5. Migrate your smart contract** - Run the following command in the `src` directory to deploy your smart contract on the `Celo` network.
 
 ```
-truffle migrate --nework alfajores --reset
+truffle migrate --network alfajores --reset
 ```
 
 **6. Start the ReactJS application** - Use the following command to start the ReactJS server (in `dfm` directory).
