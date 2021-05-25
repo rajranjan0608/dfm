@@ -3,11 +3,12 @@ const ethers = require('ethers');
 const ContractKit = require('@celo/contractkit');
 require('dotenv').config();
 
-const web3 = new Web3(`https://alfajores-forno.celo-testnet.org`);
+const RPCURL = `https://alfajores-forno.celo-testnet.org`;
+const web3 = new Web3(RPCURL);
 const kit = ContractKit.newKitFromWeb3(web3);
 
 async function awaitWrapper(){
-  let account = ethers.Wallet.fromMnemonic(process.env.MNEMONIC)
+  let account = ethers.Wallet.fromMnemonic(process.env.MNEMONIC, "m/44'/52752'/0'/0/0")
   let celoToken = await kit.contracts.getGoldToken();
 
   let celoBalance = await celoToken.balanceOf(account.address);
